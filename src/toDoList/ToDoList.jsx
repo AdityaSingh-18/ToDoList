@@ -10,7 +10,12 @@ export default function ToDoList() {
         event.preventDefault();
         let newItem = event.target.toDo.value;
         if(newItem){
-            setToDoList([...toDoList, newItem]);
+            if(!toDoList.includes(newItem)){
+                setToDoList([...toDoList, newItem]);
+            } 
+            else{
+                alert("Task already exists!");
+            }
         }
         event.target.reset();
     }
