@@ -38,9 +38,10 @@
 
 .listContainer{
     width: 600px;
-    height: 400px;
+    height: 350px;
     margin: 30px auto;
-    padding: 0;
+    padding: 10px 15px;
+    border: solid 3px black;
 }
 
 li{

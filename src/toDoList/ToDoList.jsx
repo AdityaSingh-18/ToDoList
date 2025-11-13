@@ -1,5 +1,6 @@
 import { useState } from "react";
 import './ToDoList.css';
+import DisplayList from "./DisplayList";
 
 export default function ToDoList() {
 
@@ -11,11 +12,12 @@ export default function ToDoList() {
         if(newItem){
             setToDoList([...toDoList, newItem]);
         }
+        event.target.reset();
     }
     
     let items = toDoList.map((v, i) =>{
         return(
-            <li props={i}>{v}</li>
+            <DisplayList v={v} key={i}/>
         )
     });
 
