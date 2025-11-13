@@ -80,3 +80,10 @@
 .fa-check-circle{
     color: rgb(0, 200, 0);
 }
+
+.notification-container {
+  color:white !important;
+  font-weight: 700 !important; 
+  position: sticky !important;
+  float: right !important;
+}

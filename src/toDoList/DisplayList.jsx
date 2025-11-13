@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import { toast } from "react-toastify";
 import './DisplayList.css';
 
 export default function DisplayList({v, index, toDoList, setToDoList}) {
@@ -11,6 +12,7 @@ export default function DisplayList({v, index, toDoList, setToDoList}) {
     let toDelete = (index) => {
         let updatedList = toDoList.filter((_, i) => i !== index);
         setToDoList(updatedList);
+        toast.error("Task Deleted", { autoClose: 1500 });
     };
 
     let editTask = (index) => {
@@ -25,6 +27,7 @@ export default function DisplayList({v, index, toDoList, setToDoList}) {
         setToDoList(updatedTask);
         setEditIndex(null);
         setTempValue("");
+        toast.info("Task Updated", { autoClose: 1500 });
     };
 
     let cancelEdit = () => {
@@ -38,11 +41,13 @@ export default function DisplayList({v, index, toDoList, setToDoList}) {
 
     let doneTask = (index) => {
         setDoneIndex([...doneIndex, index]);
+        toast.success("Marked as Completed", { autoClose: 1500 });
     };
 
     let undoneTask = (index) => {
         let updatedDoneIndex = doneIndex.filter((v) => v !== index);
         setDoneIndex(updatedDoneIndex);
+        toast.warning("Marked as Incomplete", { autoClose: 1500 });
     };
 
     return (
