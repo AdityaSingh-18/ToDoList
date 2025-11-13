@@ -20,6 +20,7 @@
     height: 35px;
     margin: 0;
     padding: 0px 10px;
+    font-size: 20px;
 }
 
 .toDoSave{
@@ -37,12 +38,13 @@
 
 .listContainer{
     width: 600px;
-    margin: 0 auto;
+    height: 400px;
+    margin: 30px auto;
     padding: 0;
 }
 
-ul li{
+li{
     text-align: left;
-    font-size: 30px;
+    font-size: 25px;
     list-style: none;
 }

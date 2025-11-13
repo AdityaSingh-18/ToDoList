@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './ToDoList.css'
+import { useState } from "react";
+import './ToDoList.css';
 
 export default function ToDoList() {
 
@@ -8,25 +8,28 @@ export default function ToDoList() {
     let saveToDoList = (event) => {
         event.preventDefault();
         let newItem = event.target.toDo.value;
-        setToDoList([...toDoList, newItem]);
+        if(newItem){
+            setToDoList([...toDoList, newItem]);
+        }
     }
+    
+    let items = toDoList.map((v, i) =>{
+        return(
+            <li props={i}>{v}</li>
+        )
+    });
 
     return (
     <>
         <div className='toDoContainer'>
-            <h1 className='toDoTitle'>ToDoList</h1>
+            <h1 className='toDoTitle'>ToDo List</h1>
             <form className='toDoForm' onSubmit={saveToDoList}>
-                <input className='toDoInput' type="text" name='toDo'></input>
+                <input className='toDoInput' type='text' name='toDo' />
+                <button className='toDoSave'>Save</button>
             </form>
-            <button className='toDoSave'>Save</button>
             <button className='clearAll'>Clear All</button>
             <div className='listContainer'>
-                <ul>
-                    <li>Items</li>
-                    <li>Items</li>
-                    <li>Items</li>
-                    <li>Items</li>
-                </ul>
+                {items}
             </div>
         </div>
     </>
