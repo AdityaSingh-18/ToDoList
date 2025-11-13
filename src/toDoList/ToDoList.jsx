@@ -26,7 +26,7 @@ export default function ToDoList() {
     
     let items = toDoList.map((v, i) =>{
         return(
-            <DisplayList v={v} key={i}/>
+            <DisplayList v={v} key={i} index={i} toDoList={toDoList} setToDoList={setToDoList}/>
         )
     });
 
