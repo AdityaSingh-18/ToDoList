@@ -32,15 +32,17 @@ export default function ToDoList() {
 
     return (
     <>
-        <div className='toDoContainer'>
-            <h1 className='toDoTitle'>ToDo List</h1>
-            <form className='toDoForm' onSubmit={saveToDoList}>
-                <input className='toDoInput' type='text' name='toDo' />
-                <button className='toDoSave'>Save</button>
+        <div className="toDoContainer">
+            <h1 className="toDoTitle">ToDo List</h1>
+            <form className="toDoForm" onSubmit={saveToDoList}>
+                <input className="toDoInput" type="text" name="toDo" />
+                <button className="button toDoSave">Save</button>
             </form>
-            <button className='clearAll' onClick={clearToDoList}>Clear All</button>
-            <div className='listContainer'>
-                {items}
+            <button className="button clearAll" onClick={clearToDoList}>Clear All</button>
+            <div className="listContainer">
+                <div className={toDoList.length !== 0 ? "scroll showBorder" : "scroll"}>
+                    {items}
+                </div>
             </div>
         </div>
     </>

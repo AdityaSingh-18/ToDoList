@@ -1,0 +1,15 @@
+:root {
+  --main-bg-color: rgb(20, 36, 50);
+  --highlight-color: rgb(124, 143, 161);
+  --white-color: white;
+  --border-color: rgba(0, 0, 0, 0.5);
+  --active-bg: rgba(0, 200, 0, 0.8);
+  --hover-bg: rgba(255, 255, 255, 0.2);
+  --button-hover-color: rgba(255, 255, 255, 0.96);
+  --font-family: 'Times New Roman', Times, serif;
+  --font-size: 20px;
+  --padding: 20px;
+  --box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.5);
+  --border-radius: 5px;
+}
+

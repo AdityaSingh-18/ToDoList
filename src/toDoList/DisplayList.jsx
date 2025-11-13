@@ -49,34 +49,30 @@ export default function DisplayList({v, index, toDoList, setToDoList}) {
         <div className={doneIndex.includes(index) ? "doneTasks toDoTasks" : "toDoTasks"}>
             {editIndex === index ? (
                 <>
-                    <input type="text" value={tempValue} onChange={handleChange} ref={inputRef} spellCheck="false" 
+                    <input className="editTask" type="text" value={tempValue} onChange={handleChange} ref={inputRef} spellCheck="false" 
                         onKeyDown={(e) => e.key === "Enter" && saveEdit(index)}
                     />
-                    <span>
+                    <span className="icons">
                         <i onClick={() => saveEdit(index)} className="fas fa-save"></i>
                         <i onClick={cancelEdit} className="fas fa-close"></i>
                     </span>
                 </>
             ) : (
                 <>
-                    {doneIndex.includes(index) ? (
-                        <>
-                            {v}
-                            <span>
+                    {v}
+                    <>
+                        <span className="icons">
+                            {doneIndex.includes(index) ? (
                                 <i onClick={() => undoneTask(index)} className="fas fa-undo"></i>
-                                <i onClick={() => toDelete(index)} className="fas fa-trash"></i>
-                            </span>
-                        </>
-                    ) : (
-                        <>
-                            {v}
-                            <span>
-                                <i onClick={() => doneTask(index)} className="fas fa-check-circle"></i>
-                                <i onClick={() => editTask(index)} className="fas fa-edit"></i>
-                                <i onClick={() => toDelete(index)} className="fas fa-trash"></i>
-                            </span>
-                        </>
-                    )}
+                            ) : (
+                                <>
+                                    <i onClick={() => doneTask(index)} className="fas fa-check-circle"></i>
+                                    <i onClick={() => editTask(index)} className="fas fa-edit"></i>
+                                </>
+                            )}
+                            <i onClick={() => toDelete(index)} className="fas fa-trash"></i>
+                        </span>
+                    </>
                 </>
             )}
         </div>

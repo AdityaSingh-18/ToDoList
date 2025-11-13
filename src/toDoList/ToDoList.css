@@ -1,45 +1,72 @@
-.toDoContainer{
-    width:700px;
+.toDoContainer {
+    width: 700px;
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding-top: 20px;
 }
 
-.toDoTitle{
-    font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
+.toDoTitle {
+    color: white;
     font-size: 80px;
     margin-bottom: 25px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    text-shadow: 0px 0px 60px rgba(255, 255, 255, 0.97);
 }
 
-.toDoForm{
+.toDoForm {
     display: inline-block;
 }
 
-.toDoInput{
+.toDoInput {
     width: 400px;
     height: 35px;
-    margin: 0;
     padding: 0px 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.98);
+    box-shadow: inset 0 0px 8px rgba(255, 255, 255), inset 4px 4px 5px rgba(0, 0, 0, 0.6), inset -4px -4px 5px rgba(0, 0, 0, 0.6);
+}
+
+.button {
+    height: 35px;
+    margin-left: 10px;
+    padding: 0px;
     font-size: 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    border: none;
+    cursor:pointer;
 }
 
-.toDoSave{
+.button:hover {
+    transform: scale(1.06);
+}
+
+.toDoSave {
     width: 70px;
-    height: 35px;
-    padding: 0;
-    margin: 0 10px;
+    color: white;
+    background-color: rgb(0, 200, 0);
 }
 
-.clearAll{
+.clearAll {
     width: 85px;
-    height: 35px;
-    padding: 0;
+    color: rgba(255, 255, 255,0.9);
+    background-color:rgba(255,0,0,0.95);
 }
 
-.listContainer{
-    width: 600px;
-    height: 350px;
-    margin: 30px auto;
-    padding: 15px;
-    border: solid 3px black;
+.listContainer {
+  width: 620px;
+  margin: 30px auto;
+  padding: 0;
+}
+
+.scroll{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.showBorder {
+    box-shadow: 0px 0px 20px 4px rgba(0, 0, 0, 0.5);
 }
