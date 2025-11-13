@@ -14,6 +14,10 @@ export default function ToDoList() {
         }
         event.target.reset();
     }
+
+    let clearToDoList = () => {
+        setToDoList([]);
+    }
     
     let items = toDoList.map((v, i) =>{
         return(
@@ -29,7 +33,7 @@ export default function ToDoList() {
                 <input className='toDoInput' type='text' name='toDo' />
                 <button className='toDoSave'>Save</button>
             </form>
-            <button className='clearAll'>Clear All</button>
+            <button className='clearAll' onClick={clearToDoList}>Clear All</button>
             <div className='listContainer'>
                 {items}
             </div>
