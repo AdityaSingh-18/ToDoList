@@ -1,14 +1,26 @@
+import { useState } from 'react';
 import './DisplayList.css';
 
 export default function DisplayList({v, index, toDoList, setToDoList}) {
-    const toDelete = (index) => {
-        const updatedList = toDoList.filter((v, i) => i !== index);
+
+    let [doneIndex, setDoneIndex] = useState([]);
+
+    let doneTask = (index) => {
+        setDoneIndex([...doneIndex, index]);   
+    }
+
+    let toDelete = (index) => {
+        let updatedList = toDoList.filter((v, i) => i !== index);
         setToDoList(updatedList);
     }
+
     return (
-        <div className='toDoItems'>
+        <div className={doneIndex.includes(index) ? "doneTasks toDoTasks" : "toDoTasks"}>
             {v}
-            <button onClick={()=>toDelete(index)}>Delete</button>
+            <span className="Icons">
+                  <i onClick={() => doneTask(index)} className="fas fa-check-circle"></i>
+                  <i onClick={() => toDelete(index)} className="fas fa-trash"></i>
+            </span>
         </div>
     )
 }
