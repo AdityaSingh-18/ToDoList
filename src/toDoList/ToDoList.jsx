@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {ToastContainer, toast} from "react-toastify"
 import DisplayList from "./DisplayList";
 import './ToDoList.css';
 
 export default function ToDoList() {
 
-    let [toDoList, setToDoList] = useState([]);
+    let [toDoList, setToDoList] = useState(() => {
+        let storedList = localStorage.getItem("toDoList");
+        return storedList ? JSON.parse(storedList) : [];
+    });
+
+    useEffect(() => {
+        localStorage.setItem("toDoList", JSON.stringify(toDoList));
+    }, [toDoList]);
 
     let saveToDoList = (event) => {
         event.preventDefault();
